@@ -11,4 +11,7 @@ public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Long> {
 
     @Query(value = "SELECT id FROM usuario WHERE user = :user AND pass = :pass", nativeQuery = true)
     Long buscarUsuarioByLogin(@Param(value = "user") String user, @Param(value = "pass")String pass);
+
+    @Query(value = "INSERT INTO usuario (user, pass) VALUES(:user, :pass)", nativeQuery = true)
+    Long crearNuevoUsuario(@Param(value = "user") String user, @Param(value = "pass") String pass);
 }
