@@ -16,4 +16,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     public Long buscarUsuarioByLogin(UsuarioDTO usuarioDTO) {
         return usuarioRepository.buscarUsuarioByLogin(usuarioDTO.getUser(), usuarioDTO.getPass());
     }
+
+    @Override
+    public void crearUsuario(UsuarioDTO usuarioDTO) {
+        usuarioRepository.crearNuevoUsuario(usuarioDTO.getUser(), usuarioDTO.getPass());
+    }
 }

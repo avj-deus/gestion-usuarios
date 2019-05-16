@@ -11,4 +11,5 @@ public interface UsuarioService {
      * @return
      */
     Long buscarUsuarioByLogin(UsuarioDTO usuarioDTO);
+    void crearUsuario(UsuarioDTO usuarioDTO);
 }

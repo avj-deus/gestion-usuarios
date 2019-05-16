@@ -26,6 +26,13 @@ public class UsuariosResource {
         }
         return responseDTO;
     }
+    @RequestMapping(path = "/usuarios", method = RequestMethod.POST)
+    public ResponseEntity crearUsuario(@RequestBody UsuarioDTO usuarioDTO){
+        ResponseEntity response = null;
+        usuarioService.crearUsuario(usuarioDTO);
+        response = ResponseEntity.ok().build();
+        return response;
+    }
 
 
 }

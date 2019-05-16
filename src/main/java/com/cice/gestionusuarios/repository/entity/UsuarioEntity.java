@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -23,4 +20,12 @@ public class UsuarioEntity {
     private Long id;
     private String user;
     private String pass;
+
+    @OneToOne
+    @JoinColumn(name = "usuario_data_id") //la relacion se hace en base al nombre de la tabla
+    private UsuarioDataEntity userData;
+
+    @OneToOne
+    @JoinColumn(name = "user_role")
+    private RoleEntitiy role;
 }
